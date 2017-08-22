@@ -9,12 +9,13 @@ button.addEventListener('click', function () {
 		if (xhttp.readyState == 4 && xhttp.status == 200) {
 			// eval() permet de renvoyer de créer un
 			// objet à partir du document JSON
-			eval('var a='+ this.responseText);
+			//eval('var a='+ this.responseText);
+			var a = JSON.parse(this.responseText);
 			console.log(a);
 			document.getElementById('demo').innerHTML = a.nom + "<br>" + a.chenapan +
 			"<br>" + a.roi + "<br>" + a.gonzague;
 			// Pour le fichier texte
-			// document.getElementById('demo').innerHTML = this.responseTe
+			// document.getElementById('demo').innerHTML = this.responseText
 		}
 
 	};
